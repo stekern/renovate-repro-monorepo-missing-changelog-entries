@@ -1,0 +1,29 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "enabledManagers": [
+    "custom.regex"
+  ],
+  "dependencyDashboard": true,
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "(^|/)package-.*\\.yml$"
+      ],
+      "matchStrings": [
+        "Ref: (?<depName>.*?)-v(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "matchStringsStrategy": "combination",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "^{{depName}}-v(?<version>.*)$",
+      "packageNameTemplate": "stekern/renovate-repro-monorepo-changelog-issue"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["stekern/renovate-repro-monorepo-missing-changelog-entries"],
+      "groupName": "monorepo"
+    }
+  ]
+}
