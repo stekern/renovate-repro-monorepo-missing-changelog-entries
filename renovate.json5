@@ -17,7 +17,7 @@
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "semver",
       "extractVersionTemplate": "^{{depName}}-v(?<version>.*)$",
-      "packageNameTemplate": "stekern/renovate-repro-monorepo-changelog-issue"
+      "packageNameTemplate": "stekern/renovate-repro-monorepo-missing-changelog-entries"
     }
   ],
   "packageRules": [
